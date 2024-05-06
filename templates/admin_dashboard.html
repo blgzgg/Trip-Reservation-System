@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Admin Dashboard
+{% endblock %}
+
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    <h3>Seating Chart:</h3>
+    <table border="1">
+        <tr>
+            <th>Row</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+        </tr>
+        {% for row_index in range(cost_matrix|length) %}
+        <tr>
+            <td>{{ row_index }}</td>
+            {% for seat_price in cost_matrix[row_index] %}
+            {% set seat_reserved = (row_index, loop.index0) in reserved_seats %}
+            <td>{% if seat_reserved %} X {% else %} O {% endif %}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Total Sales: ${{ total_sales }}</p>
+{% endblock %}

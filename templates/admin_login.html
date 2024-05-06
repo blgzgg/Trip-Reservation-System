@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Admin Login
+{% endblock %}
+
+{% block content %}
+    <h1>Admin Login</h1>
+    <form method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>{{ message }}</p>
+{% endblock %}
