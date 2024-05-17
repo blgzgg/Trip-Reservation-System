@@ -1,3 +1,3 @@
 # Trip-Reservation-System
 
-Flask application utiliing SQLite for database integration
+Flask application utilizing SQLite for database integration
